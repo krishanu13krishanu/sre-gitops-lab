@@ -1,0 +1,18 @@
+# Terraform local state and cache
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfplan
+
+# Kubernetes credentials
+*.kubeconfig
+
+# macOS metadata
+.DS_Store
+
+# Temporary deployment artifacts
+app.zip
+terraform/tfplan
+
+# Node.js local dependencies
+app/node_modules/

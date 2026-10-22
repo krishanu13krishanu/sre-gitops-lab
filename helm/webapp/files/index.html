@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local GitOps Deployment</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        align-items: center;
+        background: #0f172a;
+        color: #e2e8f0;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      main {
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 16px;
+        max-width: 720px;
+        padding: 40px;
+      }
+
+      h1 {
+        color: #a78bfa;
+        margin-top: 0;
+      }
+
+      .status {
+        color: #86efac;
+        font-weight: bold;
+      }
+
+      code {
+        color: #fbbf24;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="status">● Kubernetes deployment healthy</p>
+      <h1>Local GitOps Demo</h1>
+      <p>
+        This static page is served by an unprivileged NGINX container in a local
+        kind Kubernetes cluster.
+      </p>
+      <p>
+        Desired state: <code>GitHub → Argo CD → Helm → Kubernetes</code>
+      </p>
+    </main>
+  </body>
+</html>

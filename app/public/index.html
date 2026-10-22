@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SRE GitOps Lab</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        align-items: center;
+        background: #0f172a;
+        color: #e2e8f0;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      main {
+        background: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 16px;
+        max-width: 720px;
+        padding: 40px;
+      }
+
+      h1 {
+        color: #38bdf8;
+        margin-top: 0;
+      }
+
+      .status {
+        color: #86efac;
+        font-weight: bold;
+      }
+
+      .grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        margin-top: 28px;
+      }
+
+      .card {
+        background: #0f172a;
+        border-radius: 10px;
+        padding: 16px;
+      }
+
+      .card h2 {
+        color: #cbd5e1;
+        font-size: 1rem;
+        margin: 0 0 8px;
+      }
+
+      .card p {
+        color: #94a3b8;
+        font-size: 0.9rem;
+        line-height: 1.45;
+        margin: 0;
+      }
+
+      code {
+        color: #fbbf24;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="status">● Application healthy</p>
+      <h1>SRE GitOps Lab</h1>
+      <p>
+        A lightweight Node.js application deployed to Azure App Service.
+      </p>
+
+      <section class="grid">
+        <article class="card">
+          <h2>Terraform</h2>
+          <p>Infrastructure is defined and provisioned as code.</p>
+        </article>
+
+        <article class="card">
+          <h2>Azure App Service</h2>
+          <p>Public HTTPS endpoint on the Linux Free F1 plan.</p>
+        </article>
+
+        <article class="card">
+          <h2>GitOps</h2>
+          <p>Argo CD synchronizes the Helm chart to a local kind cluster.</p>
+        </article>
+      </section>
+
+      <p>Health endpoint: <code>/health</code></p>
+    </main>
+  </body>
+</html>

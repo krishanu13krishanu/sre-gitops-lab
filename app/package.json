@@ -1,0 +1,12 @@
+{
+  "name": "sre-gitops-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple public web application for the SRE GitOps lab",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
