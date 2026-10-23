@@ -162,3 +162,22 @@ Remove the local cluster:
 ```bash
 kind delete cluster --name sre-lab
 ```
+
+## Security controls implemented
+
+- Enforced HTTPS for the Azure App Service with `https_only = true`.
+- Set the Azure App Service minimum TLS version to `1.2`.
+- Disabled FTP publishing basic authentication.
+- Disabled WebDeploy publishing basic authentication.
+- Used the authenticated Azure CLI/Entra ID session for Terraform and Azure deployment; no Azure credentials or client secrets are stored in Git.
+- Excluded Terraform state files, saved plans, kubeconfig files, deployment ZIP files, and local Node.js dependencies through `.gitignore`.
+- Used the `nginxinc/nginx-unprivileged` image for the local Kubernetes workload.
+- Disabled privilege escalation for the NGINX container.
+- Dropped all Linux capabilities from the NGINX container.
+- Mounted static HTML content from the ConfigMap as read-only.
+- Configured CPU and memory requests/limits for the Kubernetes pod.
+- Added readiness and liveness probes to ensure traffic reaches only healthy pods and unhealthy containers are restarted.
+- Kept Argo CD UI access local through `kubectl port-forward`; it is not publicly exposed.
+- Enabled Argo CD `selfHeal` to revert manual Kubernetes drift back to the Git-defined state.
+- Enabled Argo CD `prune` to remove managed resources deleted from Git.
+- Kept the GitHub repository and NGINX image public, so no Git credentials or image-pull secrets are required for this lab.
